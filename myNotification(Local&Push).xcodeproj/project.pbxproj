@@ -12,6 +12,7 @@
 		2402C5911E9F19B100ECEA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2402C58F1E9F19B100ECEA1B /* Main.storyboard */; };
 		2402C5931E9F19B100ECEA1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2402C5921E9F19B100ECEA1B /* Assets.xcassets */; };
 		2402C5961E9F19B100ECEA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2402C5941E9F19B100ECEA1B /* LaunchScreen.storyboard */; };
+		2402C59E1E9F1AA000ECEA1B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2402C59D1E9F1AA000ECEA1B /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2402C5921E9F19B100ECEA1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2402C5951E9F19B100ECEA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2402C5971E9F19B100ECEA1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2402C59D1E9F1AA000ECEA1B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				2402C58B1E9F19B100ECEA1B /* AppDelegate.swift */,
 				2402C58D1E9F19B100ECEA1B /* ViewController.swift */,
+				2402C59D1E9F1AA000ECEA1B /* ContentViewController.swift */,
 				2402C58F1E9F19B100ECEA1B /* Main.storyboard */,
 				2402C5921E9F19B100ECEA1B /* Assets.xcassets */,
 				2402C5941E9F19B100ECEA1B /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2402C58E1E9F19B100ECEA1B /* ViewController.swift in Sources */,
+				2402C59E1E9F1AA000ECEA1B /* ContentViewController.swift in Sources */,
 				2402C58C1E9F19B100ECEA1B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +267,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5WMS2B626T;
 				INFOPLIST_FILE = "myNotification(Local&Push)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mahmoudkhudairi.myNotification-Local-Push-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5WMS2B626T;
 				INFOPLIST_FILE = "myNotification(Local&Push)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mahmoudkhudairi.myNotification-Local-Push-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +308,7 @@
 				2402C59C1E9F19B100ECEA1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

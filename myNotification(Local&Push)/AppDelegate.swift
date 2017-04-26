@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+//f
+import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,9 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //6
+       
+      // handleOldAppNotification(launchOption: launchOptions)
+        //g 
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = self
         return true
     }
 
+    func handleOldAppNotification(launchOption:[UIApplicationLaunchOptionsKey: Any]?){
+      //  application.cancelAllLocalNotifications()
+        if let notification = launchOption?[.localNotification] as? UILocalNotification{
+            if let hiddenMessage = notification.userInfo?["hiddenMessage"] as? String{
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let controller = storyboard.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+                controller.labelContent.text = hiddenMessage
+                window?.rootViewController = controller
+                //
+                window?.makeKeyAndVisible()
+                //return true
+                
+            }
+        }
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -41,6 +64,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    //4
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        
+        if application.applicationState == .active{
+            let alertController = UIAlertController(title: notification.alertTitle, message: notification.alertBody, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            window?.rootViewController?.present(alertController, animated: true, completion: nil)
+            
+        }
+    }
+    
 
+}
+
+//h
+extension AppDelegate : UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+        completionHandler(.sound)
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    
+    }
 }
 
